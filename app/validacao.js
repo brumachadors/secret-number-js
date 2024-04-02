@@ -1,5 +1,6 @@
 function verificaSeOChutePossuiUmValorValido(chute) {
     const numero = +chute
+    const audio = new Audio('yey-sound.mp3')
 
     if (chuteForInvalido(numero)) {
         elementoChute.innerHTML += `<div>Valor inválido</div>`
@@ -12,12 +13,14 @@ function verificaSeOChutePossuiUmValorValido(chute) {
     }
 
     if (numero === numeroSecreto) {
+        audio.play();
+        document.body.style.backgroundColor = '#b60052'
         document.body.innerHTML = `
         <h2>Você acertou!</h2>
         <h3>O número secreto era ${numeroSecreto}</h3>
-
         <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
-        `
+        `;
+
     } else if (numeroSecreto > numero) {
         elementoChute.innerHTML += `
         <div>O número secreto é maior <i class="fa-solid fa-up-long"></i></div>

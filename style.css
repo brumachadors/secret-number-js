@@ -4,6 +4,7 @@
     --font-family: 'Montserrat', sans-serif;
     --bg-color: #0AA1DD;
     --primary-color: #E8F9FD;
+    --bg-color-winner: #b60052;
 }
 
 body {
@@ -48,7 +49,7 @@ h3 {
 .btn-jogar {
     padding: 8px 15px;
     border: 0.5px solid rgba(255, 255, 255, 0.5);
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-winner);
     color: var(--primary-color);
     border-radius: 5px;
     margin-top: 20px;
@@ -56,7 +57,7 @@ h3 {
 
 .btn-jogar:hover {
     background-color: var(--primary-color);
-    color: var(--bg-color);
+    color: var(--bg-color-winner);
     transform: scale(1.1);
     transition: 1s;
     cursor: pointer;
