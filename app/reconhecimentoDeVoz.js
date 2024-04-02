@@ -5,7 +5,8 @@ window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
 recognition.lang = 'pt-Br'
-recognition.start();
+recognition.continuous = false;
+recognition.interimResults = false;
 
 recognition.addEventListener('result', onSpeak)
 
@@ -20,6 +21,22 @@ function exibeChuteNaTela(chute) {
     <div>Você disse</div>
     <span class="box">${chute}</span> 
     `
-}
+};
 
-recognition.addEventListener('end', () => recognition.start())
+var pushToTalk = document.getElementById('push-to-talk');
+var recordingIcon = document.getElementById('recording-active');
+const recordingAudio = new Audio('assets/recording-sound.mp3');
+
+pushToTalk.addEventListener('click', function () {
+        recognition.start();
+        recordingAudio.play();
+        pushToTalk.classList.add('btn-activate');
+        recordingIcon.style.display = 'block';
+    }
+);
+
+recognition.onspeechend = function () {
+    recognition.stop();
+    pushToTalk.classList.remove('btn-activate');
+    recordingIcon.style.display = 'none';
+};

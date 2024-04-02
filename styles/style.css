@@ -4,7 +4,7 @@
     --font-family: 'Montserrat', sans-serif;
     --bg-color: #0AA1DD;
     --primary-color: #E8F9FD;
-    --bg-color-winner: #b60052;
+    --bg-color-winner: #34AD3C;
 }
 
 body {
@@ -62,3 +62,51 @@ h3 {
     transition: 1s;
     cursor: pointer;
 }
+
+.container_recording {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 3em;
+}
+
+
+.btn-activate-mic {
+    padding: 8px 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.btn-activate {
+    padding: 8px 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+}
+
+.btn-activate-mic:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transition: 2s;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+    
+  }

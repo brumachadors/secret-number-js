@@ -11,16 +11,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>Número Secreto</title>
 </head>
 
 <body>
-    <h1>Acerte o número secreto</h1>
+    <h1>Adivinhe o número</h1>
 
-    <h3>O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
+    <h3>O número está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
 
     <div id="chute" class="mensagem"></div>
+
+    <button id="push-to-talk" class=" container_recording btn-activate-mic">
+        Ativar microfone
+        <img id="recording-active" style="display: none;" src="/assets/recording-icon.svg" alt="Microfone ativo">
+    </button>
 
     <script src="app/sortearNumero.js"></script>
     <script src="app/reconhecimentoDeVoz.js"></script>
